@@ -7,7 +7,7 @@ import MapView, { Marker, Callout } from 'react-native-maps';
 import * as Location from 'expo-location';
 
 
-const map = (props) => {
+const app = (props) => {
     const [mapRegion, setmapRegion] = useState({ //나의 위치 usestate
         latitude: 36.7987869, //위도
         longitude: 127.0757584, //경도
@@ -44,7 +44,7 @@ const map = (props) => {
 
 
     // 이동하기
-    const onDetail = (lat, lon) => { // 반납 가능 우산 개수, 대여 가능 우산 개수 계산
+    const onDetail = (lat, lon) => { 
         setmapRegion({ //현재 위치
             latitude: lat,
             longitude: lon,
@@ -106,7 +106,7 @@ const map = (props) => {
     );
 }
 
-export default map;
+export default app;
 
 const styles = StyleSheet.create({
     container: {
