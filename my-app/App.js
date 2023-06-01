@@ -1,7 +1,7 @@
 import React from 'react';
 import SignupForm from './Login/SignupForm';
 import { useEffect } from "react";
-import { fireStore } from "DB/Firebase";
+import { fireStore } from "./DB/Firebase";
 
 const App = () => {
     useEffect(() => {
