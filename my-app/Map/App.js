@@ -44,7 +44,7 @@ const app = (props) => {
 
 
     // 이동하기
-    const onDetail = (lat, lon) => { // 반납 가능 우산 개수, 대여 가능 우산 개수 계산
+    const onDetail = (lat, lon) => { 
         setmapRegion({ //현재 위치
             latitude: lat,
             longitude: lon,
