@@ -7,6 +7,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from './Screen/Home'
 import User from './Screen/User'
 import Info from './Screen/Info'
+import Map from './Screen/MapScreen'
 import TabBarIcon from './components/TabBarIcon'
 
 /*
@@ -40,6 +41,7 @@ export default function App() {
         <Tab.Screen name = "채팅" component={Home}/>
         <Tab.Screen name = "메인" component={User}/>
         <Tab.Screen name = "정보" component={Info}/>
+        <Tab.Screen name = "지도" component={Map}/>
       </Tab.Navigator>
 
     </NavigationContainer>
