@@ -10,7 +10,7 @@ import {
 
 const Separator = () => <View style={styles.separator} />;
 
-const User = (props) => {
+const Main = (props) => {
   return(
   <SafeAreaView style={styles.container}>
     <View>
@@ -64,4 +64,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default User;
+export default Main;

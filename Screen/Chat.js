@@ -2,7 +2,7 @@ import React from "react";
 import {Button, Text, View, TextInput} from 'react-native'
 import {useState} from 'react'
 
-const Home = (props)=>{
+const Chat = (props)=>{
 
   return(
     <View>
@@ -11,4 +11,4 @@ const Home = (props)=>{
   )
 }
 
-export default Home
+export default Chat
