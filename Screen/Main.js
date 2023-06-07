@@ -7,6 +7,7 @@ import {
   Text,
   Alert,
 } from 'react-native';
+import Map from '../components/Map';
 
 const Separator = () => <View style={styles.separator} />;
 
@@ -15,18 +16,16 @@ const Main = (props) => {
   <SafeAreaView style={styles.container}>
     <View>
       <Text>Taxtical</Text>
-      <Text style={styles.title}>
-      </Text>
+      <Text style={styles.title}> </Text>
       <Separator />
       <Button
         title="택시호출하기"
         color="#f194ff"
-        onPress={() => Alert.alert('Button with adjusted color pressed')}
+        onPress={onCallTaxiPressed}
       />
     </View>
     <View>
-      <Text style={styles.title}>
-      </Text>
+      <Text style={styles.title}> </Text>
       <Button
         title="동승자 찾기"
         color="#f194ff"
@@ -34,8 +33,7 @@ const Main = (props) => {
       />
     </View>
     <View>
-      <Text style={styles.title}>
-      </Text>
+      <Text style={styles.title}> </Text>
       <View style={styles.fixToText}>
       </View>
     </View>

@@ -1,0 +1,45 @@
+import React, {useState} from "react";
+import {Pressable, Text, View, StyleSheet} from 'react-native'
+import { useNavigation } from '@react-navigation/native';
+import CustomInput from "./CustomInput";
+import CustomButton from "./CustomButton";
+
+//비밀번호 찾기 화면
+const ForgotPasswordScreen = () => {
+    const navigation = useNavigation();
+
+    const [id, setId] = useState('')
+
+    const onSendPressed = () => { //Send 버튼 클릭시 비밀번호 재설정 화면으로 이동
+        navigation.navigate("NewPasswordScreen")
+    }
+    
+    return(
+        <View style={styles.container}>
+            <Text style={styles.title}>비밀번호 찾기</Text>
+            <CustomInput
+                placeholder='아이디를 입력하세요.'
+                value={id}
+                setValue={setId}
+            />
+            <CustomButton text="Send" onPress={onSendPressed}/>
+        </View>
+    )
+}
+
+const styles = StyleSheet.create({
+    container: {
+        padding:40,
+        backgroundColor:'#9370DB',
+        
+    },
+    title: {
+        fontSize: 25,
+        fontWeight: '500',
+        color: '#FFFFFF',
+        lineHeight: 29.3,
+        paddingBottom: 10
+    },
+})
+
+export default ForgotPasswordScreen
