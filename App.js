@@ -5,11 +5,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import Main from './Screen/Main'
-import Chat from './Screen/Chat'
-import Info from './Screen/Info'
-import Map from './Screen/MapScreen'
-import TabBarIcon from './components/TabBarIcon'
 import LoginScreen from './Screen/LoginScreen';
 import SignScreen from './Screen/SignScreen';
 import ForgotPasswordScreen from './Screen/ForgotPasswordScreen';
@@ -17,38 +12,9 @@ import NewPasswordScreen from './Screen/NewPasswordScreen';
 
 /*
 npm install @react-navigation/native @react-navigation/stack @react-navigation/bottom-tabs @react-navigation/drawer
-
 */
 
-const Tab = createBottomTabNavigator()
 const Stack = createStackNavigator();
-
-const MainTap = () => {
-  return (
-    <Tab.Navigator
-      initialRouteName = "User"
-      tabBarOptions = {{
-        activeBackgroundColor:'#F5E6FF',
-        activeTintColor:'Black',
-        style:{
-          backgroundColor:"white"
-        },
-        labelPosition:'beside-icon'
-      }}
-      screenOptions = {({route}) => ({
-        tabBarLabel:route.name,
-        tabBarIcon: ({focused}) =>(
-          TabBarIcon(focused,route.name)
-        )
-      })}
-    >
-      <Tab.Screen name = "채팅" component={Chat}/>
-      <Tab.Screen name = "메인" component={Main}/>
-      <Tab.Screen name = "정보" component={Info}/>
-      <Tab.Screen name = "지도" component={Map}/>
-    </Tab.Navigator>
-  );
-}
 
 export default function App() {
   return (
@@ -64,3 +30,18 @@ export default function App() {
   );
 }
 
+/*
+// TEST입니다 TEST에요~~
+import { View } from "react-native";
+import DBTest from "./components/DBTest"
+
+export default function App() {
+  return (
+    <>
+      <View>
+        <DBTest />
+      </View>
+    </>
+  );
+}
+*/
