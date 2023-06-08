@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import {Pressable, Text, View, StyleSheet, Alert} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
-import CustomInput from "./CustomInput";
-import CustomButton from "./CustomButton";
+import CustomInput from "../Button&Input/CustomInput";
+import CustomButton from "../Button&Input/CustomButton";
 
 //새비밀번호 입력 화면
 const NewPasswordScreen = () => {
@@ -39,6 +39,7 @@ const NewPasswordScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
+        flex:1,
         padding:40,
         backgroundColor:'#9370DB',
     },

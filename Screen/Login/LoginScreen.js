@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import {Pressable, Text, View, StyleSheet, Alert} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
-import CustomInput from "./CustomInput";
-import CustomButton from "./CustomButton";
+import CustomInput from "../Button&Input/CustomInput";
+import CustomButton from "../Button&Input/CustomButton";
 
 //앱 켰을 때 로그인하는 화면
 const LoginScreen = () => {
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
         fontSize: 25,
         fontWeight: '500',
         color: '#FFFFFF',
-        lineHeight: 29.3,
+        lineHeight: 30,
     },
     signInTextS: {
         fontSize: 12,

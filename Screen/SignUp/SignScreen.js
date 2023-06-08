@@ -1,9 +1,8 @@
 import React, {useState} from "react";
 import {Pressable, Text, View, StyleSheet, Alert} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
-import CustomInput from "./CustomInput";
-import CustomButton from "./CustomButton";
-import CustomTopbar from "./CustomTopbar";
+import CustomInput from "../Button&Input/CustomInput";
+import CustomButton from "../Button&Input/CustomButton";
 
 //회원가입 화면
 const SignScreen = () => {
@@ -58,6 +57,7 @@ const SignScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
+        flex:1,
         padding:40,
         backgroundColor:'#9370DB',
     },

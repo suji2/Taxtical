@@ -4,11 +4,11 @@ import {Image} from 'react-native'
 const TabBarIcon = (focused, name) => {
   let iconTmagePath;
   if(name === "채팅"){
-    iconTmagePath = require ('../assets/Home.png')
+    iconTmagePath = require ('../Screen/assets/chat.png')
   }else if(name === "메인"){
-    iconTmagePath = require ('../assets/User.png')
+    iconTmagePath = require ('../Screen/assets/home.png')
   }else if (name === "정보"){
-    iconTmagePath = require ('../assets/Info.png')
+    iconTmagePath = require ('../Screen/assets/user.png')
   }
 
   return(

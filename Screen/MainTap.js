@@ -5,10 +5,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
+import TabBarIcon from '../components/TabBarIcon';
 import Main from './Main'
 import Chat from './Chat'
-import Info from './Info'
 import Map from './MapScreen'
+import User from './User';
 
 const Tab = createBottomTabNavigator()
 const Stack = createStackNavigator();
@@ -34,8 +35,7 @@ const MainTap = () => {
     >
       <Tab.Screen name = "채팅" component={Chat}/>
       <Tab.Screen name = "메인" component={Main}/>
-      <Tab.Screen name = "정보" component={Info}/>
-      <Tab.Screen name = "지도" component={Map}/>
+      <Tab.Screen name = "정보" component={User}/>
     </Tab.Navigator>
   );
 }

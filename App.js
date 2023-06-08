@@ -5,10 +5,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import LoginScreen from './Screen/LoginScreen';
-import SignScreen from './Screen/SignScreen';
-import ForgotPasswordScreen from './Screen/ForgotPasswordScreen';
-import NewPasswordScreen from './Screen/NewPasswordScreen';
+import LoginScreen from './Screen/Login/LoginScreen';
+import SignScreen from './Screen/SignUp/SignScreen';
+import ForgotPasswordScreen from './Screen/Password/ForgotPasswordScreen';
+import NewPasswordScreen from './Screen/Password/NewPasswordScreen';
+import MainTap from './Screen/MainTap';
 
 /*
 npm install @react-navigation/native @react-navigation/stack @react-navigation/bottom-tabs @react-navigation/drawer
