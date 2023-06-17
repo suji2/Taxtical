@@ -8,7 +8,7 @@ import CustomButton from "../Button&Input/CustomButton";
 const LoginScreen = () => {
     const navigation = useNavigation();
 
-    const [id, setId] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const onSignInPressed = () => { //로그인하기 버튼 클릭시 메인화면으로 이동
@@ -30,14 +30,14 @@ const LoginScreen = () => {
             <Text style={styles.signInText}>Taxical 입니다.</Text>
             <Text style={styles.signInTextS}>서비스 이용을 위해 로그인 해주세요.</Text>
             <CustomInput
-                value={id}
-                setValue={setId}
-                placeholder="Id"
+                value={email}
+                setValue={setEmail}
+                placeholder="이메일을 입력하세요"
             />
             <CustomInput
                 value={password}
                 setValue={setPassword}
-                placeholder="Password"
+                placeholder="비밀번호를 입력하세요"
                 secureTextEntry={true} //비밀번호 입력시 화면에 뜨지 않음
             />
             <CustomButton

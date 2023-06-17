@@ -29,7 +29,7 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+} 
 
 /*
 // TEST입니다 TEST에요~~
@@ -44,5 +44,4 @@ export default function App() {
       </View>
     </>
   );
-}
-*/
+} */

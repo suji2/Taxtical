@@ -4,15 +4,16 @@ import { db } from "../components/firebase"
 
 const DBTest = () => {
   const [addName, setAddName] = useState("");
-  const [addAge, setAddAge] = useState("");
   const [id, setID] = useState("");
-  const [users, setUsers] = useState();
+  const [password, setPassword] = useState("");
+  const [confirmpw, setConfirmpw] = useState("");
+  const [phoneNum, setPhoneNum] = useState();
 
   const addtoDB = async () => {
     try {
-      await db.collection("Test").doc().set({
+      await db.collection("Taxtical").doc().set({
         Name: addName,
-        Age: addAge,
+        Id: addID,
         createdAt: new Date(),
       });
       alert("Added");
@@ -24,7 +25,7 @@ const DBTest = () => {
   };
   const readfromDB = async () => {
     try {
-      const data = await db.collection("Test");
+      const data = await db.collection("Taxtical");
       let tempArray = [];
       data.get().then((snap) => {
         snap.forEach((doc) => {
@@ -39,11 +40,11 @@ const DBTest = () => {
 
   const updateDB = async () => {
     try {
-      db.collection("Test")
+      db.collection("Taxtical")
         .doc(id)
         .update({
           Name: addName,
-          Age: addAge,
+          Id: addId,
         })
         .then(() => {
           alert("UPDATED!!");
@@ -55,7 +56,7 @@ const DBTest = () => {
   };
 
   const deleteDB = async () => {
-    db.collection("Test")
+    db.collection("Taxtical")
       .doc(id)
       .delete()
       .then(() => {
@@ -67,7 +68,7 @@ const DBTest = () => {
   return (
     <View>
       <TextInput placeholder="name" value={addName} onChangeText={setAddName} />
-      <TextInput placeholder="age" value={addAge} onChangeText={setAddAge} />
+      <TextInput placeholder="id" value={addId} onChangeText={setID} />
       <Button title="Create" onPress={addtoDB} />
       <Button title="Read" onPress={readfromDB} />
       {users?.map((row, idx) => {
