@@ -4,9 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import Providers from './context/index';
 
-import LoginScreen from './Screen/Login/LoginScreen';
-import SignScreen from './Screen/SignUp/SignScreen';
 import ForgotPasswordScreen from './Screen/Password/ForgotPasswordScreen';
 import NewPasswordScreen from './Screen/Password/NewPasswordScreen';
 import MainTap from './Screen/MainTap';
@@ -20,14 +19,14 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }} />
+      <Providers/>
+      <Stack.Navigator initialRouteName='LoginScreen' screenOptions={{ headerShown: false }}>
         <Stack.Screen name="ForgotPasswordScreen" component={ForgotPasswordScreen} />
-        <Stack.Screen name="SignScreen" component={SignScreen} />
         <Stack.Screen name="Main" component={MainTap} options={{ headerShown: false }} /> 
         <Stack.Screen name="NewPasswordScreen" component={NewPasswordScreen} />
       </Stack.Navigator>
     </NavigationContainer>
+    
   );
 } 
 

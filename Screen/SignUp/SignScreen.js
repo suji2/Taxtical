@@ -3,9 +3,6 @@ import {Pressable, Text, View, StyleSheet, Alert} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import CustomInput from "../Button&Input/CustomInput";
 import CustomButton from "../Button&Input/CustomButton";
-import firebase from "firebase/app";
-import 'firebase/auth'
-import AuthContext  from '../Screen/authProvider';
 
 //회원가입 화면
 const SignScreen = () => {
