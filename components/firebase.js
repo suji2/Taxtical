@@ -5,7 +5,6 @@ import {
   getReactNativePersistence
 } from 'firebase/auth';
 
-
 // Replace this with your Firebase SDK config snippet
 const firebaseConfig = {
   apiKey: "AIzaSyC5RaMeGqK5T3EHD7oYGKBEVqTUtVrKZ2A",
