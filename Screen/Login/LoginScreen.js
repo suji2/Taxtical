@@ -3,7 +3,7 @@ import {Pressable, Text, View, StyleSheet, Alert} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import CustomInput from "../Button&Input/CustomInput";
 import CustomButton from "../Button&Input/CustomButton";
-import Loading from "../Button&Input/loading";
+import Loading from "../Form/loading";
 import { AuthContext } from "../../context/authProvider";
 
 //앱 켰을 때 로그인하는 화면

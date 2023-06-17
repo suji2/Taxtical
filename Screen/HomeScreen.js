@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 import { Button, Dialog, Divider, List, Portal } from 'react-native-paper';
 
-import { chatkitty, channelDisplayName } from '../chatkitty';
-import Loading from '../components/loading';
+import { chatkitty, channelDisplayName } from '../components/Chatkittyindex';
+import Loading from './Form/loading';
 
 //사용자가 속한 채널을 나열하기 위한 채널 표시
 export default function HomeScreen({ navigation }) {

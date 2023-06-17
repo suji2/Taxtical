@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 import { Divider, List } from 'react-native-paper';
 
-import { chatkitty, channelDisplayName } from '../chatkitty';
-import Loading from '../Screen/Button&Input/loading';
+import { chatkitty, channelDisplayName } from '../components/Chatkittyindex';
+import Loading from './Form/loading';
 
 //채널 찾아보기 화면. 사용자가 가입할 수 있는 채널 나열함
 export default function BrowseChannelsScreen({ navigation }) {

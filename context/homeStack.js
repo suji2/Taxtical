@@ -7,9 +7,9 @@ import { chatkitty, channelDisplayName } from '../components/Chatkittyindex';
 import { NotificationContext } from './notificationProvider';
 
 import BrowseChannelsScreen from '../Screen/BrowseChannelsScreen';
-import ChatScreen from '../screens/ChatScreen';
-import CreateChannelScreen from '../screens/CreateChannelScreen';
-import HomeScreen from '../screens/HomeScreen';
+import ChatScreen from '../Screen/ChatScreen';
+import CreateChannelScreen from '../Screen/CreateChannelScreen';
+import HomeScreen from '../Screen/HomeScreen';
 
 const ChatStack = createStackNavigator();
 const ModalStack = createStackNavigator();

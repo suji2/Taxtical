@@ -2,7 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import React, { useContext, useState, useEffect } from 'react';
 
 import { chatkitty } from '../components/Chatkittyindex';
-import Loading from '../Screen/Button&Input/loading';
+import Loading from '../Screen/Form/loading';
 
 import AuthStack from './authStack';
 import HomeStack from './homeStack';

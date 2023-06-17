@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { IconButton, Title } from 'react-native-paper';
 
-import { chatkitty } from '../chatkitty';
-import FormButton from '../components/formButton';
-import FormInput from '../components/formInput';
+import { chatkitty } from '../components/Chatkittyindex';
+import FormButton from './Form/formButton';
+import FormInput from './Form/formInput';
 
 //사용자가 가입하고 채팅할 수 있는 새로운 공개 채널을 생성
 export default function CreateChannelScreen({ navigation }) {

@@ -3,8 +3,8 @@ import { StyleSheet, View } from 'react-native';
 import { Avatar, Bubble, GiftedChat } from 'react-native-gifted-chat';
 import { Text } from 'react-native-paper';
 
-import { chatkitty } from '../chatkitty';
-import Loading from '../components/loading';
+import { chatkitty } from '../components/Chatkittyindex';
+import Loading from './Form/loading';
 import { AuthContext } from '../context/authProvider';
 import { NotificationContext } from '../context/notificationProvider';
 
