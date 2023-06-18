@@ -3,8 +3,6 @@ import {Pressable, Text, View, StyleSheet, Alert} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import CustomInput from "../Button&Input/CustomInput";
 import CustomButton from "../Button&Input/CustomButton";
-import Loading from "../Form/loading";
-import { AuthContext } from "../../context/authProvider";
 
 //앱 켰을 때 로그인하는 화면
 const LoginScreen = () => {
@@ -12,12 +10,6 @@ const LoginScreen = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    const { login, loading } = useContext(AuthContext);
-    
-    if (loading) {
-    return <Loading />;
-    }
 
     const onSignInPressed = () => { //로그인하기 버튼 클릭시 메인화면으로 이동
         Alert.alert("알림", "로그인이 완료되었습니다.");
