@@ -10,6 +10,7 @@ import SignScreen from './Screen/SignUp/SignScreen';
 import ForgotPasswordScreen from './Screen/Password/ForgotPasswordScreen';
 import NewPasswordScreen from './Screen/Password/NewPasswordScreen';
 import MainTap from './Screen/MainTap';
+import Map from './components/Map';
 
 /*
 npm install @react-navigation/native @react-navigation/stack @react-navigation/bottom-tabs @react-navigation/drawer
@@ -26,6 +27,7 @@ export default function App() {
         <Stack.Screen name="SignScreen" component={SignScreen} />
         <Stack.Screen name="Main" component={MainTap} options={{ headerShown: false }} /> 
         <Stack.Screen name="NewPasswordScreen" component={NewPasswordScreen} />
+        <Stack.Screen name="CallTaxi" component={Map} />
       </Stack.Navigator>
     </NavigationContainer>
     

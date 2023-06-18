@@ -7,11 +7,17 @@ import {
   Text,
   Alert,
 } from 'react-native';
-import Map from '../components/Map';
+import { useNavigation } from '@react-navigation/native';
 
 const Separator = () => <View style={styles.separator} />;
 
-const Main = (props) => {
+const Main = (props) => { 
+  const navigation = useNavigation();
+
+  const onCallTaxi = () => { //택시호출하기 버튼 누르면 지도로 이동
+    navigation.navigate("CallTaxi");
+  }
+
   return(
   <SafeAreaView style={styles.container}>
     <View>
@@ -27,7 +33,7 @@ const Main = (props) => {
         <Button
           title="택시호출하기"
           color="#f194ff"
-          onPress={() => Alert.alert('Button with adjusted color pressed')}
+          onPress={onCallTaxi}
         />
         <Text style={styles.title}></Text>
         <Button
