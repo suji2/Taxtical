@@ -6,6 +6,7 @@ const Separator = () => <View style={styles.separator} />;
 
 const User = (props) => {
   const navigation = useNavigation();
+  
   const [name, setName] = useState('');
   const [gender, setGender] = useState('');
   const [year, setYear] = useState(''); 
