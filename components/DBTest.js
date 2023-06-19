@@ -3,36 +3,40 @@ import { View, TextInput, Button, Text } from "react-native";
 import { auth } from "../components/firebase"
 
 const DBTest = () => {
-  const [addName, setAddName] = useState("");
-  const [id, setID] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmpw, setConfirmpw] = useState("");
-  const [phoneNum, setPhoneNum] = useState();
+  const [id, setID] = useState("");
+  const [users, setUsers] = useState([]);
+  const [addName, setAddName] = useState("");
+  const [phone, setPhone] = useState("");
 
   const addtoDB = async () => {
     try {
-      await db.collection("Taxtical").doc().set({
-        Name: addName,
-        Id: addID,
+      await auth.collection("Taxtical").doc().set({
+        Email: email,
+        Password: password,
         createdAt: new Date(),
+        Name: addName,
+        Phone: phone,
       });
       alert("Added");
+      setEmail("");
+      setPassword("");
       setAddName("");
-      setAddAge("");
+      setPhone("");
     } catch (error) {
       console.log(error.message);
     }
   };
+
   const readfromDB = async () => {
     try {
-      const data = await db.collection("Taxtical");
+      const data = await auth.collection("Taxtical").get();
       let tempArray = [];
-      data.get().then((snap) => {
-        snap.forEach((doc) => {
-          tempArray.push({ ...doc.data(), id: doc.id });
-        });
-        setUsers(tempArray);
+      data.forEach((doc) => {
+        tempArray.push({ ...doc.data(), id: doc.id });
       });
+      setUsers(tempArray);
     } catch (error) {
       console.log(error.message);
     }
@@ -40,11 +44,13 @@ const DBTest = () => {
 
   const updateDB = async () => {
     try {
-      db.collection("Taxtical")
+      auth.collection("Taxtical")
         .doc(id)
         .update({
+          Email: email,
+          Password: password,
           Name: addName,
-          Id: addId,
+          Phone: phone,
         })
         .then(() => {
           alert("UPDATED!!");
@@ -56,35 +62,32 @@ const DBTest = () => {
   };
 
   const deleteDB = async () => {
-    db.collection("Taxtical")
+    auth.collection("Taxtical")
       .doc(id)
       .delete()
       .then(() => {
         alert("Deleted");
-        readfromDB;
+        readfromDB();
       });
   };
 
   return (
     <View>
+      <TextInput placeholder="email" value={email} onChangeText={setEmail} />
+      <TextInput placeholder="password" value={password} onChangeText={setPassword} />
       <TextInput placeholder="name" value={addName} onChangeText={setAddName} />
-      <TextInput placeholder="id" value={addId} onChangeText={setID} />
+      <TextInput placeholder="phone" value={phone} onChangeText={setPhone} />
       <Button title="Create" onPress={addtoDB} />
       <Button title="Read" onPress={readfromDB} />
-      {users?.map((row, idx) => {
-        return (
-          <>
-            <Text> User - {idx}</Text>
-            <Text> {row.id} </Text>
-            <Text> {row.Name} </Text>
-            <Text> {row.Age} </Text>
-          </>
-        );
-      })}
+      {users.map((row, idx) => (
+        <React.Fragment key={idx}>
+          <Text> User - {idx}</Text>
+          <Text> {row.id} </Text>
+          <Text> {row.phone} </Text>
+        </React.Fragment>
+      ))}
       <Button title="Update" onPress={updateDB} />
       <TextInput placeholder="Doc ID" value={id} onChangeText={setID} />
-      <TextInput placeholder="name" value={addName} onChangeText={setAddName} />
-      <TextInput placeholder="Age" value={addAge} onChangeText={setAddAge} />
 
       <Button title="Delete" onPress={deleteDB} />
       <TextInput placeholder="Delete Doc ID" value={id} onChangeText={setID} />
