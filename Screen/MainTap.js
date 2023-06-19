@@ -12,7 +12,6 @@ import Find from '../components/Find';
 import Call from '../components/Call';
 import Personal from '../components/Personal';
 
-
 const Tab = createBottomTabNavigator()
 const Stack = createStackNavigator();
 
@@ -45,7 +44,7 @@ const UserStack = () => (
 
 const MainTap = () => {
   return (
-    <Tab.Navigator
+    <Tab.Navigator initialRouteName='Main'
       tabBarOptions = {{
         activeBackgroundColor:'#F0F8FF',
         activeTintColor:'Black',

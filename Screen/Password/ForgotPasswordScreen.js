@@ -8,7 +8,7 @@ import CustomButton from "../Button&Input/CustomButton";
 const ForgotPasswordScreen = () => {
     const navigation = useNavigation();
 
-    const [id, setId] = useState('')
+    const [email, setEmail] = useState('')
 
     const onSendPressed = () => { //Send 버튼 클릭시 비밀번호 재설정 화면으로 이동
         navigation.navigate("NewPasswordScreen")
@@ -18,9 +18,9 @@ const ForgotPasswordScreen = () => {
         <View style={styles.container}>
             <Text style={styles.title}>비밀번호 찾기</Text>
             <CustomInput
-                placeholder='아이디를 입력하세요.'
-                value={id}
-                setValue={setId}
+                placeholder='이메일를 입력하세요.'
+                value={email}
+                setValue={setEmail}
             />
             <CustomButton text="Send" onPress={onSendPressed}/>
         </View>

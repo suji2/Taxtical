@@ -13,7 +13,7 @@ const User = (props) => {
         <View style={[styles.button, styles.buttonBorder]}>
           <Button
             title="인적 사항 변경"
-          onPress={() => navigation.navigate('Personal')}
+            onPress={() => navigation.navigate('Personal')}
             color="pink"
           />
         </View>
@@ -21,7 +21,7 @@ const User = (props) => {
         <View style={[styles.button, styles.buttonBorder]}>
           <Button
             title="닉네임 변경"
-            onPress={() => navigation.navigate('nickname')}
+            onPress={() => navigation.navigate('Nickname')}
             color="pink" 
           />
         </View>
@@ -29,7 +29,7 @@ const User = (props) => {
         <View style={[styles.button, styles.buttonBorder]}>
           <Button
             title="채팅 기록"
-            onPress={() => navigation.navigate('chat history')}
+            onPress={() => navigation.navigate('Chathistory')}
             color="pink" 
           />
         </View>
