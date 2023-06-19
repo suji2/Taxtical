@@ -19,7 +19,7 @@ export default function App() {
       <Stack.Navigator initialRouteName='LoginScreen' screenOptions={{ headerShown: false }}>
         <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name="ForgotPasswordScreen" component={ForgotPasswordScreen} />
-        <Stack.Screen name="SignScreen" component={SignScreen} />
+        <Stack.Screen name="SignScreen" component={SignScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Main" component={MainTap} options={{ headerShown: false }} /> 
         <Stack.Screen name="NewPasswordScreen" component={NewPasswordScreen} />
         <Stack.Screen name="CallTaxi" component={Map} />

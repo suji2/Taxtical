@@ -53,8 +53,7 @@ const Main = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    marginHorizontal: 16,
+    backgroundColor: '#F0F8FF',
   },
   title: {
     textAlign: 'center',
