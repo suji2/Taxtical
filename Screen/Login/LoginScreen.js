@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {Pressable, Text, View, StyleSheet, Alert} from 'react-native'
+import { auth } from '../../components/firebase';
 import { useNavigation } from '@react-navigation/native';
 import CustomInput from "../Button&Input/CustomInput";
 import CustomButton from "../Button&Input/CustomButton";
@@ -11,10 +12,25 @@ const LoginScreen = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const onSignInPressed = () => { //로그인하기 버튼 클릭시 메인화면으로 이동
+    const onSignInPressed = async () => { //로그인하기 버튼 클릭시 메인화면으로 이동
+        /*auth().signInWithEmailAndPassword(email, password)
+            .then(() => {
+                Alert.alert("알림", "로그인이 완료되었습니다.");
+                navigation.navigate("Main");
+            })
+            .catch(error => {
+                Alert.alert("오류", "로그인에 실패했습니다. 다시 시도해주세요.");
+                console.log(error);
+            });*/
         Alert.alert("알림", "로그인이 완료되었습니다.");
         navigation.navigate("Main")
-    }
+        /*try {
+            const {user} = await signIn(info);
+            console.log(user);
+          } catch (e) {
+            Alert.alert("로그인에 실패하였습니다.");
+          }*/
+        }
 
     const onForgotPasswordPressed = () => { //비밀번호 찾기 글씨 클릭시 찾기 화면으로 이동
         navigation.navigate("ForgotPasswordScreen");
