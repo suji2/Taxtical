@@ -11,10 +11,6 @@ import NewPasswordScreen from './Screen/Password/NewPasswordScreen';
 import MainTap from './Screen/MainTap';
 import Map from './components/Map';
 
-/*
-npm install @react-navigation/native @react-navigation/stack @react-navigation/bottom-tabs @react-navigation/drawer
-*/
-
 const Stack = createStackNavigator();
 
 export default function App() {
