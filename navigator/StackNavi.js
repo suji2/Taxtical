@@ -5,7 +5,7 @@ import MainTap from "../Screen/MainTap";
 import User from "../Screen/User";
 import LoginScreen from "../Screen/LoginScreen";
 import SignScreen from "../Screen/SignScreen";
-import NewPasswordScreen from "../Screen/Password/NewPasswordScreen";
+// import NewPasswordScreen from "../Screen/Password/NewPasswordScreen";
 import ForgotPasswordScreen from "../Screen/Password/ForgotPasswordScreen";
 import Map from "../components/Map"
 import Find from '../components/Find'
@@ -147,7 +147,7 @@ const StackNavi = () => {
 
                 }}
             />
-            <Stack.Screen
+            {/* <Stack.Screen
                 name="NewPasswordScreen"
                 component={NewPasswordScreen}
                 options={{
@@ -160,7 +160,7 @@ const StackNavi = () => {
                         color: "white",
                     },
                 }}
-            />
+            /> */}
             <Stack.Screen
                 name="CallTaxi"
                 component={Map}

@@ -11,14 +11,14 @@ const ForgotPasswordScreen = () => {
     const [email, setEmail] = useState('')
 
     const onSendPressed = () => { //Send 버튼 클릭시 비밀번호 재설정 화면으로 이동
-        navigation.navigate("NewPasswordScreen")
+        // navigation.navigate("NewPasswordScreen")
     }
     
     return(
         <View style={styles.container}>
             <Text style={styles.title}>비밀번호 찾기</Text>
             <CustomInput
-                placeholder='이메일를 입력하세요.'
+                placeholder='이메일을 입력하세요.'
                 value={email}
                 setValue={setEmail}
             />
