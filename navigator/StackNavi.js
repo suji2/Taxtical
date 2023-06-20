@@ -8,7 +8,9 @@ import SignScreen from "../Screen/SignScreen";
 import NewPasswordScreen from "../Screen/Password/NewPasswordScreen";
 import ForgotPasswordScreen from "../Screen/Password/ForgotPasswordScreen";
 import Map from "../components/Map"
-
+import Find from '../components/Find'
+import Nickname from "../components/Nickname";
+import Main from '../Screen/Main'
 const Stack = createStackNavigator();
 
 const StackNavi = () => {
@@ -18,10 +20,52 @@ const StackNavi = () => {
             screenOptions={{ headerShown: true }}
         >
             <Stack.Screen
+                name="Nickname"
+                component={Nickname}
+                options={{
+                    title: "Nickname",
+                    headerShown: true,
+                    headerStyle: { backgroundColor: "#9acd32" },
+                    headerTintColor: "white",
+                    headerTitleStyle: {
+                        fontWeight: "bold",
+                        color: "white",
+                    },
+                }}
+            />
+            <Stack.Screen
+                name="Main"
+                component={Main}
+                options={{
+                    title: "Main",
+                    headerShown: true,
+                    headerStyle: { backgroundColor: "#9acd32" },
+                    headerTintColor: "white",
+                    headerTitleStyle: {
+                        fontWeight: "bold",
+                        color: "white",
+                    },
+                }}
+            />
+            <Stack.Screen
                 name="Chat"
                 component={Chat}
                 options={{
                     title: "Chat",
+                    headerShown: true,
+                    headerStyle: { backgroundColor: "#9acd32" },
+                    headerTintColor: "white",
+                    headerTitleStyle: {
+                        fontWeight: "bold",
+                        color: "white",
+                    },
+                }}
+            />
+            <Stack.Screen
+                name="Find"
+                component={Find}
+                options={{
+                    title: "Find",
                     headerShown: true,
                     headerStyle: { backgroundColor: "#9acd32" },
                     headerTintColor: "white",

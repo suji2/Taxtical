@@ -18,6 +18,11 @@ const Main = (props) => {
     navigation.navigate("CallTaxi");
   }
 
+  const aa = () => { //택시호출하기 버튼 누르면 지도로 이동
+    navigation.navigate("Find");
+  }
+
+
   return(
   <SafeAreaView style={styles.container}>
     <View>
@@ -39,7 +44,7 @@ const Main = (props) => {
         <Button
           title="동승자 찾기"
           color="#f194ff"
-          onPress={() => Alert.alert('Button with adjusted color pressed')}
+          onPress={aa}
         />
       </View>
       <View>

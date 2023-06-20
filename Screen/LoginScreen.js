@@ -33,7 +33,7 @@ const LoginScreen = (props) => {
         id: doc.id,
         ...doc.data(),
       }));
-      const user = users.find((u) => u.email === email && u.pw === pw);
+      const user = users.find((u) => u.email === email && u.password === pw);
 
       if (user) {
         alert("로그인 성공");

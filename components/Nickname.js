@@ -9,8 +9,9 @@ const Nickname = () => {
   const [message, setMessage] = useState("");
   const [messageColor, setMessageColor] = useState("black");
 
-  const handleNicknameChange = () => {
+  const handleNicknameChange = (props) => {
     const isNicknameValid = checkNicknameValidity(nickname);
+
 
     if (isNicknameValid) {
       setMessage("변경 완료");

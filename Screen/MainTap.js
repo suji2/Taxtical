@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, TextInput, StyleSheet} from 'react-native'
+import { View, TextInput, StyleSheet } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -16,7 +16,8 @@ const Tab = createBottomTabNavigator()
 const Stack = createStackNavigator();
 
 const FindStack = () => (
-  <Stack.Navigator>
+  <Stack.Navigator
+    initialRouteName='Taxtical🚕'>
     <Stack.Screen
       name="Taxtical🚕"
       component={Main}
@@ -30,7 +31,8 @@ const FindStack = () => (
 );
 
 const UserStack = () => (
-  <Stack.Navigator>
+  <Stack.Navigator
+    initialRouteName='메인'>
     <Stack.Screen
       name="Taxtical🚕"
       component={User}
@@ -44,14 +46,14 @@ const UserStack = () => (
 
 const MainTap = () => {
   return (
-    <Tab.Navigator initialRouteName='Main'
-      tabBarOptions = {{
-        activeBackgroundColor:'#F0F8FF',
-        activeTintColor:'Black',
-        style:{
-          backgroundColor:"white"
+    <Tab.Navigator initialRouteName='메인'
+      tabBarOptions={{
+        activeBackgroundColor: '#F0F8FF',
+        activeTintColor: 'Black',
+        style: {
+          backgroundColor: "white"
         },
-        labelPosition:'beside-icon',
+        labelPosition: 'beside-icon',
         tabStyle: {
           flex: 1,
         },
@@ -60,16 +62,16 @@ const MainTap = () => {
           height: '100%',
         },
       }}
-      screenOptions = {({route}) => ({
-        tabBarLabel:route.name,
-        tabBarIcon: ({focused}) =>(
-          TabBarIcon(focused,route.name)
-          )
-        })}
+      screenOptions={({ route }) => ({
+        tabBarLabel: route.name,
+        tabBarIcon: ({ focused }) => (
+          TabBarIcon(focused, route.name)
+        )
+      })}
     >
-      <Tab.Screen name = "채팅" component={Chat}/>
-      <Tab.Screen name = "메인" component={FindStack}/>
-      <Tab.Screen name = "정보" component={UserStack}/>
+      <Tab.Screen name="채팅" component={Chat} />
+      <Tab.Screen name="메인" component={FindStack} />
+      <Tab.Screen name="정보" component={UserStack} />
     </Tab.Navigator>
   );
 }

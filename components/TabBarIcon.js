@@ -6,9 +6,9 @@ const TabBarIcon = (focused, name) => {
   if(name === "채팅"){
     iconTmagePath = require ('../Screen/assets/chat.png')
   }else if(name === "메인"){
-    iconTmagePath = require ('../Screen/assets/home.png')
+    iconTmagePath = require ('../Screen/assets/Home.png')
   }else if (name === "정보"){
-    iconTmagePath = require ('../Screen/assets/user.png')
+    iconTmagePath = require ('../Screen/assets/User.png')
   }
 
   return(

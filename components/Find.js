@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Button, SafeAreaView, Text, TextInput, Picker, CheckBox } from 'react-native';
+import { StyleSheet, View, Button, SafeAreaView, Text, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const Separator = () => <View style={styles.separator} />;
 
-const Home = (props) => {
+const Find = (props) => {
   const navigation = useNavigation();
   const [destination, setDestination] = useState('');
   const [arrival, setArrival] = useState('');
   const [hours, setHours] = useState('00');
   const [minutes, setMinutes] = useState('00');
+  const [selectedGender, setSelectedGender] = useState('');
 
   const handleDestinationChange = (text) => {
     setDestination(text);
@@ -19,30 +20,29 @@ const Home = (props) => {
     setArrival(text);
   };
 
-  const handleHourChange = (value) => {
-    setHours(value);
+  const handleHourChange = (text) => {
+    setHours(text);
   };
 
-  const handleMinuteChange = (value) => {
-    setMinutes(value);
+  const handleMinuteChange = (text) => {
+    setMinutes(text);
   };
 
-  const [selectedGenders, setSelectedGenders] = useState([]);
-
-  const handleGenderSelection = (gender) => {
-    if (selectedGenders.includes(gender)) {
-      setSelectedGenders(selectedGenders.filter((item) => item !== gender));
-    } else {
-      setSelectedGenders([...selectedGenders, gender]);
-    }
+  const handleGenderChange = (text) => {
+    setSelectedGender(text);
   };
 
-  const handleButtonPress = () => { // 버튼이 눌렸을 때 실행할 동작들
+  const handleButtonPress = () => {
     console.log('Destination:', destination);
     console.log('Arrival:', arrival);
     console.log('Hours:', hours);
     console.log('Minutes:', minutes);
-    console.log('Selected Genders:', selectedGenders);
+    console.log('Selected Gender:', selectedGender);
+    <Button
+            title="선택완료"
+            color="black"
+            onPress={() => navigation.navigate('MatchingScreen')}
+          />
   };
 
   return (
@@ -68,51 +68,31 @@ const Home = (props) => {
       </View>
       <View style={styles.container}>
         <View style={styles.pickerContainer}>
-          <Picker
-            selectedValue={hours}
+          <TextInput
             style={styles.picker}
-            onValueChange={handleHourChange}
-          >
-            {Array.from({ length: 24 }, (_, i) => i).map((hour) => (
-              <Picker.Item key={hour} label={hour.toString().padStart(2, '0')} value={hour.toString().padStart(2, '0')} />
-            ))}
-          </Picker>
+            value={hours}
+            onChangeText={handleHourChange}
+            keyboardType="numeric"
+            maxLength={2}
+          />
           <Text style={styles.label}>:</Text>
-          <Picker
-            selectedValue={minutes}
+          <TextInput
             style={styles.picker}
-            onValueChange={handleMinuteChange}
-          >
-            {Array.from({ length: 60 }, (_, i) => i).map((minute) => (
-              <Picker.Item key={minute} label={minute.toString().padStart(2, '0')} value={minute.toString().padStart(2, '0')} />
-            ))}
-          </Picker>
+            value={minutes}
+            onChangeText={handleMinuteChange}
+            keyboardType="numeric"
+            maxLength={2}
+          />
         </View>
       </View>
       <View style={styles.container}>
         <View style={styles.genderItem}>
-          <CheckBox
-            value={selectedGenders.includes('female')}
-            onValueChange={() => handleGenderSelection('female')}
-            color="black"
+          <TextInput
+            style={styles.genderTextInput}
+            placeholder="성별"
+            value={selectedGender}
+            onChangeText={handleGenderChange}
           />
-          <Text style={[styles.genderText, selectedGenders.includes('female') && styles.checkedGenderText]}>남자</Text>
-        </View>
-        <View style={styles.genderItem}>
-          <CheckBox
-            value={selectedGenders.includes('male')}
-            onValueChange={() => handleGenderSelection('male')}
-            color="black"
-          />
-          <Text style={[styles.genderText, selectedGenders.includes('male') && styles.checkedGenderText]}>여자</Text>
-        </View>
-        <View style={styles.genderItem}>
-          <CheckBox
-            value={selectedGenders.includes('other')}
-            onValueChange={() => handleGenderSelection('other')}
-            color="black"
-          />
-          <Text style={[styles.genderText, selectedGenders.includes('other') && styles.checkedGenderText]}>무관</Text>
         </View>
       </View>
       <View style={styles.container}>
@@ -136,13 +116,13 @@ const styles = StyleSheet.create({
   separator: {
     marginVertical: 8,
     borderBottomColor: '#737373',
-    borderBottomWidth: 5, 
+    borderBottomWidth: 5,
   },
   buttonContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    flexDirection: 'row', 
+    flexDirection: 'row',
   },
   input: {
     width: 200,
@@ -153,12 +133,12 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   arrowContainer: {
-    paddingHorizontal: 10, 
+    paddingHorizontal: 10,
     marginVertical: -10,
-    alignItems: 'center', 
+    alignItems: 'center',
   },
   arrow: {
-    fontSize: 24, 
+    fontSize: 24,
   },
   pickerContainer: {
     flexDirection: 'row',
@@ -168,6 +148,10 @@ const styles = StyleSheet.create({
   picker: {
     flex: 1,
     height: 50,
+    borderColor: 'gray',
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    marginBottom: 10,
   },
   label: {
     fontSize: 20,
@@ -179,13 +163,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 10,
   },
-  genderText: {
-    marginLeft: 10,
-    color: 'black', 
-  },
-  checkedGenderText: {
-    color: 'black', 
+  genderTextInput: {
+    width: 200,
+    height: 50,
+    borderColor: 'gray',
+    borderWidth: 1,
+    paddingHorizontal: 10,
   },
 });
 
-export default Home;
+export default Find;

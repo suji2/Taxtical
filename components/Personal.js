@@ -1,48 +1,20 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, SafeAreaView, Text, Button, Picker, TextInput } from 'react-native';
+import { StyleSheet, View, SafeAreaView, Text, Button, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const Separator = () => <View style={styles.separator} />;
 
-const User = (props) => {
+const Personal = (props) => {
   const navigation = useNavigation();
   
   const [name, setName] = useState('');
   const [gender, setGender] = useState('');
-  const [year, setYear] = useState(''); 
-  const [month, setMonth] = useState(''); 
-  const [day, setDay] = useState(''); 
+  const [dateOfBirth, setDateOfBirth] = useState(''); 
 
   const handleSave = () => {
-    const dateOfBirth = `${year}.${month}.${day}`;
     console.log('Name:', name);
     console.log('Gender:', gender);
     console.log('Date of Birth:', dateOfBirth);
-  };
-
-  const generateYears = () => {
-    const currentYear = new Date().getFullYear();
-    const years = [];
-    for (let year = 1950; year <= currentYear; year++) {
-      years.push(year.toString());
-    }
-    return years;
-  };
-
-  const generateMonths = () => {
-    const months = [];
-    for (let month = 1; month <= 12; month++) {
-      months.push(month.toString());
-    }
-    return months;
-  };
-
-  const generateDays = () => {
-    const days = [];
-    for (let day = 1; day <= 31; day++) {
-      days.push(day.toString());
-    }
-    return days;
   };
 
   return (
@@ -77,41 +49,13 @@ const User = (props) => {
 
         <View style={styles.inputContainer}>
           <Text style={styles.title}>생년월일 : </Text>
-          <View style={styles.dateContainer}>
-            <Picker
-              style={styles.picker}
-              selectedValue={year}
-              onValueChange={(itemValue) => setYear(itemValue)}
-            >
-              <Picker.Item label="년" value="" />
-              {generateYears().map((year) => (
-                <Picker.Item key={year} label={year} value={year} />
-              ))}
-            </Picker>
-            <Text style={styles.label}>년</Text>
-            <Picker
-              style={styles.picker}
-              selectedValue={month}
-              onValueChange={(itemValue) => setMonth(itemValue)}
-            >
-              <Picker.Item label="월" value="" />
-              {generateMonths().map((month) => (
-                <Picker.Item key={month} label={month} value={month} />
-              ))}
-            </Picker>
-            <Text style={styles.label}>월</Text> 
-            <Picker
-              style={styles.picker}
-              selectedValue={day}
-              onValueChange={(itemValue) => setDay(itemValue)}
-            >
-              <Picker.Item label="일" value="" />
-              {generateDays().map((day) => (
-                <Picker.Item key={day} label={day} value={day} />
-              ))}
-            </Picker>
-            <Text style={styles.label}>일</Text> 
-          </View>
+          <TextInput
+            style={styles.input}
+            value={dateOfBirth}
+            onChangeText={setDateOfBirth}
+            placeholder="YYYY.MM.DD"
+            placeholderTextColor="gray"
+          />
         </View>
 
         <Button title="수정" onPress={handleSave} />
@@ -158,26 +102,10 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 8,
   },
-  dateContainer: {
-    flexDirection: 'row',
-  },
-  picker: {
-    flex: 1,
-    height: 40,
-    borderColor: 'gray',
-    borderWidth: 1,
-    borderRadius: 5,
-    marginHorizontal: 4,
-  },
-  label: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginHorizontal: 4,
-  },
   genderContainer: {
     flexDirection: 'row',
     alignItems: 'center',
   },
 });
 
-export default User;
+export default Personal;

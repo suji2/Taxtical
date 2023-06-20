@@ -22,7 +22,7 @@ const ForgotPasswordScreen = () => {
                 value={email}
                 setValue={setEmail}
             />
-            <CustomButton text="Send" onPress={onSendPressed}/>
+            <CustomButton text="찾기" onPress={onSendPressed}/>
         </View>
     )
 }
